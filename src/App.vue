@@ -63,7 +63,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: var(--container-padding);
+		padding: 20px;
 		text-align: center;
 	}
 </style>

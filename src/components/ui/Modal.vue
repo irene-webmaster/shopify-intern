@@ -28,7 +28,7 @@
 <script>
 	export default {
 		methods: {
-			close() {
+			onClose() {
 				this.$emit('onClose');
 			},
 		},
@@ -54,7 +54,7 @@
 		flex-direction: column;
 		width: 85%;
 		height: 85%;
-		padding: var(--container-padding);
+		padding: 20px;
 		overflow-x: auto;
 	}
 

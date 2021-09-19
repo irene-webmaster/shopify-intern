@@ -17,6 +17,7 @@
 					{ 'liked': isLiked },
 				]"
 				type="button"
+				aria-label="Like image"
 				@click="onImageLike"
 			>
 				<i class="fas fa-heart icon-like"></i>
@@ -28,7 +29,7 @@
 		v-show="isModalVisible"
 		class="modal-image"
 		:image="image"
-		@close="closeModal"
+		@onClose="closeModal"
 	>
 		<template v-slot:header>
 			<h1 class="modal-image__title">{{ image.title }}</h1>
@@ -139,10 +140,17 @@
 	}
 
 	// Modal
-	.modal-image .modal-image__image {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: contain;
+	.modal-image {
+		&__image {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+
+		&__title {
+			margin: 0 40px 0 0;
+			font-size: 1.1rem;
+		}
 	}
 </style>
