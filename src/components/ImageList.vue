@@ -11,7 +11,7 @@
 			>
 				<template
 					v-for="(image, index) in images"
-					:key="image.identifier"
+					:key="image.hdurl"
 				>
 					<ImageItem 
 						v-if="index % columns === col - 1"
@@ -41,6 +41,30 @@
 				requred: true,
 			}
 		},
+		mounted() {
+			this.$nextTick(() => {
+				window.addEventListener('resize', this.onResize);
+			});
+			this.onResize();
+		},
+		beforeUnmount() {
+			window.removeEventListener('resize', this.onResize);
+		},
+		methods: {
+			onResize() {
+				const containerWidth = window.innerWidth;
+
+				if (containerWidth > 768) {
+					this.columns = 3;
+				}
+				if (containerWidth <= 768) {
+					this.columns = 2;
+				}
+				if (containerWidth <= 576) {
+					this.columns = 1;
+				}
+			}
+		},
 	}
 </script>
 
@@ -52,7 +76,7 @@
 
 		&__list {
 			display: grid;
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(var(--columns), 1fr);
 			grid-gap: 2vw;
 		}
 	}

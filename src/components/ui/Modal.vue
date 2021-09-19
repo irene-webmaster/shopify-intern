@@ -4,24 +4,20 @@
 			<div class="modal"
 				role="dialog"
 				aria-labelledby="modalTitle"
-				aria-describedby="modalDescription"
 			>
-				<header
-					class="modal-header"
-					id="modalTitle"
-				>
+				<header class="modal-header" id="modalTitle">
 					<slot name="header"></slot>
 					<button
 						type="button"
 						class="button-close"
-						@click="close"
+						@click="onClose"
 						aria-label="Close modal"
 					>
-						x
+						<span class="fa fa-times" aria-hidden="true"></span>
 					</button>
 				</header>
 
-				<section class="modal-body" id="modalDescription">
+				<section class="modal-body">
 					<slot name="body"></slot>
 				</section>
 			</div>
@@ -33,13 +29,13 @@
 	export default {
 		methods: {
 			close() {
-				this.$emit('close');
+				this.$emit('onClose');
 			},
 		},
 	};
 </script>
 
-	<style>
+<style lang="scss" scoped>
 	.modal-backdrop {
 		position: fixed;
 		top: 0;
@@ -54,10 +50,12 @@
 
 	.modal {
 		background: #fff;
-		overflow-x: auto;
+		display: flex;
+		flex-direction: column;
 		width: 85%;
 		height: 85%;
-		padding: 30px;
+		padding: var(--container-padding);
+		overflow-x: auto;
 	}
 
 	.modal-header {
@@ -65,8 +63,8 @@
 	}
 
 	.modal-body {
-		position: relative;
-		padding: 30px 0;
+		height: 90%;
+		padding: 10px 0 0;
 	}
 
 	.button-close {
@@ -89,4 +87,4 @@
 	.modal-fade-leave-active {
 		transition: opacity .5s ease;
 	}
-	</style>
+</style>
