@@ -1,8 +1,8 @@
 # Astronomy Picture of the Day
 
-### An app that displays NASA’s Astronomy Picture of the Day utilizing data from the NASA’s API.
+An app that displays NASA’s Astronomy Picture of the Day utilizing data from the NASA’s API.
 
-https://apod.iamirina.ca/
+**The web app is available at https://apod.iamirina.ca**.
 
 What you can do with this app:
 
