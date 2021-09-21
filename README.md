@@ -1,24 +1,17 @@
-# shopify-intern
+# Astronomy Picture of the Day
 
-## Project setup
-```
-npm install
-```
+### An app that displays NASA’s Astronomy Picture of the Day utilizing data from the NASA’s API.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+https://apod.iamirina.ca/
 
-### Compiles and minifies for production
-```
-npm run build
-```
+What you can do with this app:
 
-### Lints and fixes files
-```
-npm run lint
-```
+- View NASA astronomy pictures for the month of September on any device.
+- Open each picture in an individual modal window.
+- Like and unlike pictures which is saved in the browser’s local storage.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+To run locally:
+- Clone this project.
+- Run `npm install`.
+- Run `npm run serve`.
+- Open http://localhost:8080
